@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mikro Alışkanlık Takipçisi
 
-## Getting Started
+Günlük alışkanlıklarını takip etmek için basit bir web uygulaması.
 
-First, run the development server:
+## Ne İşe Yarar?
 
+- Alışkanlık ekleyebilirsin
+- Tamamladığın alışkanlıkları işaretleyebilirsin  
+- Alışkanlıkları silebilirsin
+- Güzel bir tasarımla hepsini görebilirsin
+
+## Nasıl Çalıştırılır?
+
+### 1. Projeyi indir
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repo-url>
+cd mikro-aliskanlik-takipcisi
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Paketleri yükle
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Supabase ayarla
+1. Supabase.com'a git
+2. Yeni proje oluştur
+3. SQL Editor'da `supabase-schema.sql` dosyasındaki tüm komutları çalıştır
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. .env.local dosyası oluştur
+```
+NEXT_PUBLIC_SUPABASE_URL=senin_supabase_url_in
+NEXT_PUBLIC_SUPABASE_ANON_KEY=senin_supabase_key_in
+```
 
-## Learn More
+### 5. Çalıştır
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+http://localhost:3000 adresine git.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Kullanılan Teknolojiler
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js 14
+- Supabase
+- Tailwind CSS
+- TypeScript
 
-## Deploy on Vercel
+## Nasıl Kullanılır?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Kayıt ol veya giriş yap
+2. ➕ butonuna bas, yeni alışkanlık ekle
+3. ✅ butonuna bas, tamamlandı olarak işaretle
+4. ❌ butonuna bas, sil
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Dosya Yapısı
+
+```
+src/
+├── app/
+│   ├── page.tsx          # Ana sayfa
+│   └── profile/          # Profil sayfası
+├── components/
+│   ├── HabitCard.tsx     # Alışkanlık kartı
+│   ├── HabitForm.tsx     # Yeni alışkanlık formu
+│   └── AuthForm.tsx      # Giriş formu
+└── lib/
+    ├── supabaseClient.ts # Supabase bağlantısı
+    └── habits.ts         # Veritabanı işlemleri
+```
+
+## Geliştirici
+
+Tahsin Mert Mutlu tarafından kodlanmıştır.
+
+[LinkedIn Profili](https://www.linkedin.com/in/tahsinmertmutlu/)
